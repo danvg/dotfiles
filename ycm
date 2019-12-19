@@ -1,0 +1,10 @@
+def Settings(**kwargs):
+    return {
+        'flags': ['-x', 'c++', '-Wall', '-Wextra', '-Werror', '-pedantic', '-std=c++11'],
+        'do_cache': True
+    }
+
+# def FlagsForFile(filename, **kwargs):
+#     flags = ['-Wall', '-Wextra', '-Wconversion', '-pedantic', '-std=c++11']
+#     return {'flags': flags, 'do_cache': True}
+

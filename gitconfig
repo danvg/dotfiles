@@ -1,0 +1,7 @@
+[user]
+	name = Dan VG
+	email = dava1000@student.miun.se
+[push]
+	default = simple
+[core]
+	editor = vim 
