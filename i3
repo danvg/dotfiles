@@ -179,14 +179,15 @@ bindsym $mod+r mode "resize"
 ######   MY STUFF #########################################
 
 # startup appications
-exec --no-startup-id volumeicon
-exec --no-startup-id pulseaudio
+# exec_always start-pulseaudio-x11
+# exec --no-startup-id pulseaudio --daemon
 exec --no-startup-id picom -b
 exec_always --no-startup-id ~/config/launch_polybar.sh
-exec --no-startup-id pulseaudio --start
 exec --no-startup-id nitrogen --restore; sleep 1
+# exec --no-startup-id pulseaudio --start
+# exec --no-startup-id volumeicon
 # exec --no-startup-id mpd ~/.config/mpd/config
-exec_always --no-startup-id sbxkb
+# exec_always --no-startup-id sbxkb
 #exec --no-startup-id xautolock -time 20 -locker blurlock
 #exec --no-startup-id conky -c ~/.dotfiles/conky_maia
 
@@ -227,7 +228,7 @@ new_window 1pixel
 # application window settings
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
-for_window [class="GParted"] floating enable border normal
+# for_window [class="GParted"] floating enable border normal
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable

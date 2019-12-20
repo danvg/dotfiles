@@ -1,3 +1,4 @@
+
 # Dark 256 color solarized theme for the color GNU ls utility.
 # Used and tested with dircolors (GNU coreutils) 8.5
 #
@@ -187,6 +188,8 @@ EXEC 00;38;5;64
 .eps    00;38;5;136
 .CR2    00;38;5;136
 .ico    00;38;5;136
+.nef    00;38;5;136 # Nikon RAW format
+.NEF    00;38;5;136
 
 # Files of special interest (base1)
 .tex             00;38;5;245
@@ -299,4 +302,5 @@ EXEC 00;38;5;64
 .anx 00;38;5;166
 .ogv 00;38;5;166
 .ogx 00;38;5;166
+
 

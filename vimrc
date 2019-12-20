@@ -58,10 +58,11 @@ filetype plugin indent on
 syntax enable
 set background=dark
 " set background=light
-colorscheme PaperColor
-" colorscheme solarized
+" colorscheme PaperColor
+colorscheme solarized
 set t_Co=256
 highlight Normal ctermbg=NONE guibg=NONE " fix to get transparent background
+hi LineNr ctermfg=60 ctermbg=NONE cterm=NONE guifg=#6272a4 guibg=#282a36 gui=NONE
 " Completion
 set completeopt+=menuone
 set completeopt+=noselect
