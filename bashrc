@@ -169,4 +169,7 @@ export FZF_DEFAULT_OPTS="--preview 'head -n 80 {}' --height 40%"
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"  
+
 alias cls=clear
+alias vim=nvim
+alias gvim=nvim-qt
