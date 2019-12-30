@@ -35,13 +35,13 @@ set runtimepath+='~/.vim/plugged/LanguageClient-neovim'
 let g:LanguageClient_serverCommands = {
    \ 'python': ['/usr/bin/pyls'],
    \ 'cpp'   : ['clangd'],
-   \ 'ada'   : ['/home/dan/Downloads/adalangserver/ada_language_server'],
+   \ 'ada'   : ['/home/dan/opt/ada-lsp/ada_language_server'],
    \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-"nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 let g:ada_standard_types=1
 let g:ada_extended_completion=1
@@ -70,7 +70,7 @@ let g:airline_theme = 'cool'
 let g:airline_extensions = ['quickfix', 'whitespace']
 
 " Spellcheck
-set spelllang=en,sv
+" set spelllang=en,sv
 " set spell " Dont want this by default
 " Language syntax hightlighting
 filetype plugin indent on
@@ -78,10 +78,11 @@ syntax enable
 set background=dark
 " set background=light
 " colorscheme PaperColor
-colorscheme solarized
+"colorscheme solarized
+colorscheme material
 set t_Co=256
 highlight Normal ctermbg=NONE guibg=NONE " fix to get transparent background
-hi LineNr ctermfg=60 ctermbg=NONE cterm=NONE guifg=#6272a4 guibg=#282a36 gui=NONE
+highlight LineNr ctermfg=60 ctermbg=NONE cterm=NONE guifg=#6272a4 guibg=#282a36 gui=NONE
 " Completion
 set completeopt+=menuone,noselect,preview
 set shortmess+=c
@@ -154,3 +155,10 @@ if has("gui_running")
    :set guioptions-=T "no toolbar
    :set guifont=Noto\ Mono\ for\ Powerline\ 10
 endif
+
+" will make it so that the completion menu doesnt close
+" upon hitting enter
+:inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" emacs style indentation
+:nnoremap <Tab> ==
