@@ -84,7 +84,7 @@ set t_Co=256
 highlight Normal ctermbg=NONE guibg=NONE " fix to get transparent background
 highlight LineNr ctermfg=60 ctermbg=NONE cterm=NONE guifg=#6272a4 guibg=#282a36 gui=NONE
 " Completion
-set completeopt+=menuone,noselect,preview
+set completeopt+=menuone,noselect ",preview
 set shortmess+=c
 set shortmess+=I " no intro msg
 set belloff+=ctrlg
@@ -140,7 +140,7 @@ set pumheight=20
 set number
 " set relativenumber
 set showcmd
-" set cursorline
+set cursorline
 set colorcolumn=80
 set splitright
 set splitbelow

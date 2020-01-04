@@ -1,13 +1,9 @@
 set-option -g default-terminal "screen-256color"
-# set-option -g pane-active-border-fg green
 set-option -g history-limit 10000
 
-# setw -g mode-mouse on
-# setw -g mouse-select-pane on
 set -g mouse on
 
 set -g base-index 1
-# setw -g mode-bg black
 setw -g automatic-rename
 
 set-option -g status-justify right
@@ -39,3 +35,4 @@ bind > resize-pane -R 8
 bind - resize-pane -D 8
 bind + resize-pane -U 8
 
+set-window-option -g mode-keys vi
