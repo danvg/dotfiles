@@ -173,5 +173,5 @@ export VISUAL=vim
 alias ccat="highlight"
 
 # for gnat
-export PATH=$PATH:~/opt/GNAT/2019/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/opt/ada-lsp
+# export PATH=$PATH:~/opt/GNAT/2019/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/ada_language_server

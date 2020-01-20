@@ -10,7 +10,7 @@
 
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
-export EDITOR=nano
+export EDITOR=vim
 export VISUAL=vim
 
 # if running bash

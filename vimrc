@@ -35,7 +35,7 @@ set runtimepath+='~/.vim/plugged/LanguageClient-neovim'
 let g:LanguageClient_serverCommands = {
    \ 'python': ['/usr/bin/pyls'],
    \ 'cpp'   : ['clangd'],
-   \ 'ada'   : ['/home/dan/opt/ada-lsp/ada_language_server'],
+   \ 'ada'   : ['ada_language_server'],
    \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
@@ -44,9 +44,9 @@ nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 " nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 let g:ada_standard_types=1
-let g:ada_extended_completion=1
-let g:ada_omni_with_keywords=1
-let g:ada_default_compiler='gnat'
+" let g:ada_extended_completion=1
+" let g:ada_omni_with_keywords=1
+" let g:ada_default_compiler='gnat'
 
 let g:arline_powerline_fonts = 1
 if !exists('g:airline_symbols')
@@ -77,9 +77,8 @@ filetype plugin indent on
 syntax enable
 set background=dark
 " set background=light
-" colorscheme PaperColor
-"colorscheme solarized
-colorscheme material
+" colorscheme material
+colorscheme Tomorrow-Night-Eighties
 set t_Co=256
 highlight Normal ctermbg=NONE guibg=NONE " fix to get transparent background
 highlight LineNr ctermfg=60 ctermbg=NONE cterm=NONE guifg=#6272a4 guibg=#282a36 gui=NONE
