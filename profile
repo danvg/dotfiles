@@ -10,8 +10,8 @@
 
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then

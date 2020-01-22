@@ -4,17 +4,17 @@ set nocompatible
 filetype off
 
 " setup plugin manager for unix and neovim
-if has('nvim')
-   if empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
-      !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-   endif
-   " windows: ~\AppData\Local\nvim\autoload\plug.vim
-else " for unix and vim
-   if empty(glob("~/.vim/autoload/plug.vim"))
-      !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-   endif
-   " windows: ~\vimfiles\autoload\plug.vim
-endif
+" if has('nvim')
+"    if empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
+"       !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"    endif
+"    " windows: ~\AppData\Local\nvim\autoload\plug.vim
+" else " for unix and vim
+"    if empty(glob("~/.vim/autoload/plug.vim"))
+"       !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"    endif
+"    " windows: ~\vimfiles\autoload\plug.vim
+" endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'flazz/vim-colorschemes'
@@ -28,25 +28,21 @@ Plug 'junegunn/fzf'
 call plug#end()
 
 let g:mucomplete#enable_auto_at_startup = 1
-" let g:mucomplete#completion_delay = 1
 
 set hidden
 set runtimepath+='~/.vim/plugged/LanguageClient-neovim'
 let g:LanguageClient_serverCommands = {
-   \ 'python': ['/usr/bin/pyls'],
+   \ 'python': ['pyls'],
    \ 'cpp'   : ['clangd'],
+   \ 'c'     : ['clangd'],
    \ 'ada'   : ['ada_language_server'],
    \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 let g:ada_standard_types=1
-" let g:ada_extended_completion=1
-" let g:ada_omni_with_keywords=1
-" let g:ada_default_compiler='gnat'
 
 let g:arline_powerline_fonts = 1
 if !exists('g:airline_symbols')
@@ -75,13 +71,20 @@ let g:airline_extensions = ['quickfix', 'whitespace']
 " Language syntax hightlighting
 filetype plugin indent on
 syntax enable
+
+" colors
 set background=dark
-" set background=light
-" colorscheme material
 colorscheme Tomorrow-Night-Eighties
+if (has('nvim'))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+endif
+if (has('termguicolors'))
+   set termguicolors
+endif
 set t_Co=256
-highlight Normal ctermbg=NONE guibg=NONE " fix to get transparent background
-highlight LineNr ctermfg=60 ctermbg=NONE cterm=NONE guifg=#6272a4 guibg=#282a36 gui=NONE
+" highlight Normal ctermbg=NONE guibg=NONE " fix to get transparent background
+" highlight LineNr ctermfg=60 ctermbg=NONE cterm=NONE guifg=#6272a4 guibg=#282a36 gui=NONE
+
 " Completion
 set completeopt+=menuone,noselect ",preview
 set shortmess+=c
@@ -89,6 +92,7 @@ set shortmess+=I " no intro msg
 set belloff+=ctrlg
 set path+=**
 set wildmenu
+
 " Searching
 " set ignorecase
 set smartcase
@@ -96,11 +100,13 @@ set showmatch
 set matchtime=5
 set incsearch
 " set hlsearch
+
 " Wrapping
 set nowrap
 set linebreak
 set textwidth=500
 set whichwrap+=<,>,h,l
+
 " File handling
 set encoding=utf-8
 set termencoding=utf-8
@@ -111,6 +117,7 @@ set autowrite
 set noswapfile
 set nobackup
 set nowritebackup
+
 " Other stuff
 set laststatus=2
 set mouse=a
