@@ -146,3 +146,6 @@ export CXXFLAGS="-std=c++11 -Wall -Wextra -pedantic"
 # for ada lsp
 export PATH=$PATH:~/.local/ada_language_server
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/ada_language_server
+
+# for gnat tools
+alias gnatpp=/home/dan/.local/GNAT/2019/bin/gnatpp

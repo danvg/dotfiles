@@ -12,6 +12,7 @@ export LANG=en_US.UTF-8
 export TERM=xterm-256color
 export EDITOR=nvim
 export VISUAL=nvim
+export BROWSER=/usr/bin/chromium
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
