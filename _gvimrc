@@ -1,0 +1,8 @@
+set guioptions-=T
+set guioptions-=m
+set lines=48 columns=88 linespace=0
+if has('gui_win32')
+   set guifont=Noto_Mono_for_Powerline:h12
+else
+   set guifont=Noto\ Mono\ for\ Powerline\ 11
+endif
