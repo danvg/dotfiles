@@ -1,6 +1,4 @@
-#
 # ~/.bashrc
-#
 
 [[ $- != *i* ]] && return
 
@@ -123,21 +121,19 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
 
 # poweline is wrapping lines and behaving weirdly therby disabled
-if [ -f `which powerline-daemon` ];
-then
-    powerline-daemon -q
-    POWERLINE_BASH_CONTINUATION=1
-    POWERLINE_BASH_SELECT=1
-    source /usr/share/powerline/bindings/bash/powerline.sh
-fi
+# if [ -f `which powerline-daemon` ];
+# then
+#     powerline-daemon -q
+#     POWERLINE_BASH_CONTINUATION=1
+#     POWERLINE_BASH_SELECT=1
+#     source /usr/share/powerline/bindings/bash/powerline.sh
+# fi
 
 # setup colors for terminal
 # bash -c  "$(wget -qO- https://git.io/vQgMr)"
 
 alias ccat="highlight"
 alias cls=clear
-alias vim=nvim
-alias gvim=nvim-qt
 
 export CC=clang
 export CXX=clang++

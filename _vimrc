@@ -1,37 +1,46 @@
-" VIM Config file
+ " VIM Config file
 
 set nocompatible
 filetype off
 
-" setup plugin manager for unix like systems
-if !has('win32')
-   if has('nvim')
+" auto setup plugin manager
+if has('nvim')
+   if has('win32')
+      " echom '@TODO windows nvim auto download plugin manager'
+      " windows: ~/AppData/Local/nvim/autoload/plug.vim
+   else
       if empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
          !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
       endif
-      " windows: ~\AppData\Local\nvim\autoload\plug.vim
-   else " for unix and vim
+   endif
+else
+   if has('win32')
+      " echom '@TODO windows vim auto download plugin manager'
+      " windows: %USERPROFILE%/vimfiles/autoload/plug.vim
+   else
       if empty(glob("~/.vim/autoload/plug.vim"))
          !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
       endif
-      " windows: ~\vimfiles\autoload\plug.vim
    endif
 endif
 
-if has('win32')
-   if has('nvim')
-      silent! call plug#begin('~\AppData\Local\nvim\plugged')
+if has('nvim')
+   if has('win32')
+      call plug#begin('~/AppData/local/nvim/plugged')
    else
-      silent! call plug#begin('~\vimfiles\plugged')
+      echom '@TODO linux setup nevim plugin folder location'
    endif
 else
-   call plug#begin('~/.vim/plugged')
+   if has('win32')
+      call plug#begin('~/vimfiles/plugged')
+   else
+      call plug#begin('~/.vim/plugged')
+   endif
 endif
 
 Plug 'flazz/vim-colorschemes'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-surround'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
 Plug 'tpope/vim-commentary'
 Plug 'lifepillar/vim-mucomplete'
 if has('win32')
@@ -40,19 +49,24 @@ else
    Plug 'autozimu/LanguageClient-neovim', {'branch':'next', 'do':'bash install.sh'}
 endif
 Plug 'junegunn/fzf'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
-let g:mucomplete#enable_auto_at_startup = 1
-
 set hidden
-if has('win32')
-   if has('nvim')
-      set runtimepath+='~\AppData\Local\nvim\plugged\LanguageClient-neovim'
+
+if has('nvim')
+   if has('win32')
+      set runtimepath+='~/AppData/Local/nvim/plugged/LanguageClient-neovim'
    else
-      set runtimepath+='~\vimfiles\plugged\LanguageClient-neovim'
+      echom '@TODO: linux runtimepath location'
    endif
 else
-   set runtimepath+='~/.vim/plugged/LanguageClient-neovim'
+   if has('win32')
+      set runtimepath+='~/vimfiles/plugged/LanguageClient-neovim'
+   else
+      set runtimepath+='~/.vim/plugged/LanguageClient-neovim'
+   endif
 endif
 
 let g:LanguageClient_serverCommands = {
@@ -66,28 +80,19 @@ nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
+let g:mucomplete#enable_auto_at_startup = 1
 let g:ada_standard_types=1
 
-" let g:arline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" airline powerline/nerd symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.whitespace = '☲'
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.notexists = 'Ɇ'
-let g:airline_symbols.crypt = '🔒'
-
-let g:airline_theme = 'cool'
-let g:airline_extensions = ['quickfix', 'whitespace']
+let g:lightline = {
+   \ 'colorscheme': 'Tomorrow_Night_Eighties',
+   \ 'active': {
+   \   'left': [ [ 'mode', 'paste' ],
+   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+   \ },
+   \ 'component_function': {
+   \   'gitbranch': 'gitbranch#name'
+   \ },
+   \ }
 
 " Spellcheck
 " set spelllang=en,sv
@@ -96,9 +101,11 @@ let g:airline_extensions = ['quickfix', 'whitespace']
 " Language syntax hightlighting
 filetype plugin indent on
 syntax enable
-set t_Co=256
+if !has('gui_running')
+   set t_Co=256
+endif
 set background=dark
-colorscheme Tomorrow-Night-Eighties
+colorscheme neodark
 
 " Completion
 set completeopt+=menuone,noselect,preview
@@ -173,6 +180,9 @@ function TrimTrailingWhiteSpace()
   %s/\s*$//
   ''
 endfunction
+
+" autoremove trailing whitespace on save
+autocmd FileType ada,c,cpp autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " will make it so that the completion menu doesnt close
 " upon hitting enter

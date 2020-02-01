@@ -1,18 +1,10 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
-
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
+# ~/.profile (if no .bash_profile or .bash_login)
 
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
-export EDITOR=nvim
-export VISUAL=nvim
-export BROWSER=/usr/bin/chromium
+export EDITOR=vim
+export VISUAL=vim
+export BROWSER=chromium
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -31,8 +23,5 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
-xrdb ~/.Xresources
-export RANGER_LOAD_DEFAULT_RC=FALSE
 
 eval `dircolors ~/.dir_colors`

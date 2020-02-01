@@ -1,8 +1,10 @@
+set lines=48 columns=88 linespace=0
 set guioptions-=T
 set guioptions-=m
-set lines=48 columns=88 linespace=0
+
 if has('gui_win32')
-   set guifont=Noto_Mono_for_Powerline:h12
+   set guifont=Noto_Mono:h12
 else
-   set guifont=Noto\ Mono\ for\ Powerline\ 11
+   " this is for neovim-qt, how to detect it?
+   :GuiFont Noto Mono:h12
 endif
