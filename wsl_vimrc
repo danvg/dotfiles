@@ -1,73 +1,31 @@
-" VIM Config file
+" NVIM Config file Arch WSL
 
 set nocompatible
 filetype off
 
-" auto setup plugin manager
-if has('nvim')
-   if has('win32')
-      " echom '@TODO windows nvim auto download plugin manager'
-      " windows: ~/AppData/Local/nvim/autoload/plug.vim
-   else
-      if empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
-         !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-      endif
-   endif
-else
-   if has('win32')
-      " echom '@TODO windows vim auto download plugin manager'
-      " windows: %USERPROFILE%/vimfiles/autoload/plug.vim
-   else
-      if empty(glob("~/.vim/autoload/plug.vim"))
-         !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-      endif
-   endif
-endif
+let g:python3_host_prog=expand('~/venv/bin/python')
 
-if has('nvim')
-   if has('win32')
-      call plug#begin('~/AppData/local/nvim/plugged')
-   else
-      call plug#begin('~/.config/nvim/plugged')
-   endif
-else
-   if has('win32')
-      call plug#begin('~/vimfiles/plugged')
-   else
-      call plug#begin('~/.vim/plugged')
-   endif
-endif
-
+call plug#begin('~/.config/nvim/plugged')
 Plug 'flazz/vim-colorschemes'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'lifepillar/vim-mucomplete'
-if has('win32')
-   Plug 'autozimu/LanguageClient-neovim', {'branch':'next', 'do': 'powershell -executionpolicy bypass -File install.ps1'}
-else
-   Plug 'autozimu/LanguageClient-neovim', {'branch':'next', 'do':'bash install.sh'}
-endif
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/echodoc.vim'
+Plug 'autozimu/LanguageClient-neovim', {'branch':'next', 'do':'bash install.sh'}
 Plug 'junegunn/fzf'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 set hidden
+set runtimepath+='~/.config/nvim/plugged/LanguageClient-neovim'
 
-if has('nvim')
-   if has('win32')
-      set runtimepath+='~/AppData/Local/nvim/plugged/LanguageClient-neovim'
-   else
-      set runtimepath+='~/.config/nvim/plugged/LanguageClient-neovim'
-   endif
-else
-   if has('win32')
-      set runtimepath+='~/vimfiles/plugged/LanguageClient-neovim'
-   else
-      set runtimepath+='~/.vim/plugged/LanguageClient-neovim'
-   endif
-endif
+let g:deoplete#enable_at_startup = 1
+set cmdheight=2
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'signature'
+set signcolumn=yes
 
 let g:LanguageClient_serverCommands = {
    \ 'python': ['pyls'],
@@ -80,9 +38,6 @@ nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
-let g:mucomplete#enable_auto_at_startup = 1
-let g:ada_standard_types=1
-
 let g:lightline = {
    \ 'colorscheme': 'Tomorrow_Night_Eighties',
    \ 'active': {
@@ -94,9 +49,7 @@ let g:lightline = {
    \ },
    \ }
 
-if has('nvim') && !has('win32')
-   let g:python3_host_prog='~/venv/bin/python'
-endif
+let g:ada_standard_types=1
 
 " Spellcheck
 " set spelllang=en,sv
@@ -105,9 +58,7 @@ endif
 " Language syntax hightlighting
 filetype plugin indent on
 syntax enable
-if !has('gui_running')
-   set t_Co=256
-endif
+set t_Co=256
 set background=dark
 colorscheme neodark
 
@@ -148,9 +99,6 @@ set nowritebackup
 " Other stuff
 set laststatus=2
 set mouse=a
-if !has("nvim")
-  set ttymouse=xterm2
-endif
 set ttyfast
 set mousehide
 set tabstop=3
@@ -174,10 +122,11 @@ set number
 
 " set relativenumber
 set showcmd
-set cursorline
-set colorcolumn=80
+" set cursorline
+" set colorcolumn=80
 set splitright
 set splitbelow
+set lazyredraw
 
 " Removes trailing spaces
 function TrimTrailingWhiteSpace()
