@@ -2,15 +2,14 @@
 
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
-export EDITOR=vim
-export VISUAL=vim
-export BROWSER=chromium
+export EDITOR=nvim
+export VISUAL=nvim
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+ . "$HOME/.bashrc"
     fi
 fi
 

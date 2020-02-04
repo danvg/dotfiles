@@ -121,19 +121,21 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
 
 # poweline is wrapping lines and behaving weirdly therby disabled
-# if [ -f `which powerline-daemon` ];
-# then
-#     powerline-daemon -q
-#     POWERLINE_BASH_CONTINUATION=1
-#     POWERLINE_BASH_SELECT=1
-#     source /usr/share/powerline/bindings/bash/powerline.sh
-# fi
+if [ -f `which powerline-daemon` ];
+then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    source /usr/share/powerline/bindings/bash/powerline.sh
+fi
 
 # setup colors for terminal
 # bash -c  "$(wget -qO- https://git.io/vQgMr)"
 
 alias ccat="highlight"
 alias cls=clear
+alias vi=nvim
+alias vim=nvim
 
 export CC=clang
 export CXX=clang++
@@ -142,6 +144,3 @@ export CXXFLAGS="-std=c++11 -Wall -Wextra -pedantic"
 # for ada lsp
 export PATH=$PATH:~/.local/ada_language_server
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/ada_language_server
-
-# for gnat tools
-alias gnatpp=/home/dan/.local/GNAT/2019/bin/gnatpp

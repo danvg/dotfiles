@@ -12,12 +12,12 @@ set-option -g status-fg cyan
 set-option -g status-interval 5
 set-option -g status-left-length 30
 set-option -g status-left '#[fg=magenta]» #[fg=blue,bold]#T#[default]'
-set-option -g status-right '#[fg=red,bold][[ #(git branch) branch ]] #[fg=cyan]»» #[fg=blue,bold]###S #[fg=magenta]%R %Y/%m/%d#(acpi | cut -d ',' -f 2)#[default]'
+set-option -g status-right '#[fg=red,bold][[ #(git branch) branch ]] #[fg=magenta]%R %Y/%m/%d#[default]'
 set-option -g visual-activity on
 
 # Titles (window number, program name, active (or not)
 set-option -g set-titles on
-set-option -g set-titles-string '#H:#S.#I.#P #W #T'
+# set-option -g set-titles-string '#H:#S.#I.#P #W #T'
 
 # VIM compability
 

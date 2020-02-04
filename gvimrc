@@ -3,8 +3,8 @@ set guioptions-=T
 set guioptions-=m
 
 if has('gui_win32')
-   set guifont=Noto_Mono:h12
+   set guifont=NotoMono_NF:h12:cANSI:qDRAFT
 else
    " this is for neovim-qt, how to detect it?
-   :GuiFont Noto Mono:h12
+   :GuiFont NotoMono_NF:h12
 endif
