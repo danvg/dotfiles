@@ -9,3 +9,5 @@ $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8'
 New-Alias -Name vi -Value 'C:\Program Files\Vim\vim82\vim.exe'
 New-Alias -Name vim -Value 'C:\Program Files\Vim\vim82\vim.exe'
 Set-PSReadlineOption -EditMode vi -BellStyle None
+
+New-Alias -Name make -Value 'C:\msys64\mingw64\bin\mingw32-make.exe'
