@@ -147,3 +147,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/ada_language_server
 
 # local binaries
 export PATH=$PATH:~/.local/bin
+
+# export PATH=$PATH:/usr/lib/w3m
+export RANGER_LOAD_DEFAULT_RC=FALSE
