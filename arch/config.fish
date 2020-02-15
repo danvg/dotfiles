@@ -1,6 +1,9 @@
 # ~/.config/fish/config.fish
 
 set -U LANG en_US.UTF-8
+
+fish_vi_key_bindings
+
 set -U EDITOR nvim
 set -U VISUAL nvim
 set -U BROWSER chromium 
