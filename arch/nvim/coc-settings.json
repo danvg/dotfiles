@@ -1,0 +1,23 @@
+{
+   "languageserver": {
+      "Ada": {
+         "command": "ada_language_server",
+         "filetypes": ["ada"]
+      },
+      "ccls": {
+         "command": "ccls",
+         "filetypes": ["c", "cpp", "objc", "objcpp"],
+         "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+         "initializationOptions": {
+            "cache": {
+               "directory": "~/.cache/ccls"
+            }
+         }
+      }
+   },
+
+   "codeLens.enable": false,
+   "diagnostic.errorSign": "✘",
+   "diagnostic.warningSign": "",
+   "diagnostic.infoSign": ""
+}

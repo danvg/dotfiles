@@ -1,0 +1,9 @@
+[user]
+	email = dava1000@student.miun.se
+	name = Dan VG
+[gui]
+	recentrepo = D:/workspace/Programvaruteknik/Current/DT019G/dava1000_solutions_vt20
+[credential]
+	helper = manager
+[core]
+	autocrlf = false
