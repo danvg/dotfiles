@@ -17,12 +17,17 @@ Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
+Plug 'JamshedVesuna/vim-markdown-preview'
 call plug#end()
 
 set hidden
 
 let g:airline_powerline_fonts=1
 let g:airline_theme='base16_gruvbox_dark_hard'
+
+let vim_markdown_preview_toggle=1
+let vim_markdown_preview_use_xdg_open=1
+let vim_markdown_preview_temp_file=0
 
 "-------------------------------------------------------------------------
 " COC.NVIM

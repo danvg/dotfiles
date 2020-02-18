@@ -10,7 +10,7 @@
          "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
          "initializationOptions": {
             "cache": {
-               "directory": "~/.cache/ccls"
+               "directory": "/home/dan/.cache/ccls"
             }
          }
       }
