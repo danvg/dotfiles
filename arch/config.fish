@@ -22,6 +22,9 @@ abbr --add ccat highlight
 abbr --add config-nvim 'nvim ~/.config/nvim/init.vim'
 abbr --add config-fish 'nvim ~/.config/fish/config.fish'
 abbr --add config-ranger 'nvim ~/.config/ranger/rc.conf'
+abbr --add config-i3 'nvim ~/.config/i3/config'
+abbr --add config-polybar 'nvim ~/.config/polybar/config'
+abbr --add config-picom 'nvim ~/.config/picom/config'
 
 set -gx PATH $PATH ~/.local/ada_language_server
 set -gx PATH $PATH ~/.local/bin
@@ -31,3 +34,5 @@ function fish_greeting
 end
 
 set -x RANGER_LOAD_DEFAULT_RC FALSE
+
+abbr youtube-dl-music 'youtube-dl --extract-audio --audio-format vorbis --audio-quality 3 --output "~/Music/%(title)s.%(ext)s"' 
