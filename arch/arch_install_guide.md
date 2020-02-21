@@ -44,8 +44,8 @@ reflector -c "sweden" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 
 ## Install essential packages
 
-pacstrap /mnt base base-devel linux linux-firmware amd-ucode nvidia dhcpcd\  
-   networkmanager nvim man-db man-pages
+pacstrap /mnt base base-devel linux linux-firmware linux-headers\  
+   amd-ucode nvidia dhcpcd networkmanager neovim man-db man-pages
 
 ## Generate fstab for mounted partitions
 
@@ -96,12 +96,12 @@ pacman -S xorg xorg-server xclip xsel
 
 ## Install a DE or WM
 
-pacman -S plasma sddm konsole fish  
+pacman -S plasma sddm sudo konsole fish  
 systemctl enable sddm
 
 ## Create a user
 
-visudo  
+EDITOR=nvim & visudo  
 %wheel ALL=(ALL) ALL
 
 useradd -m -G wheel -s /bin/fish dan  
@@ -110,7 +110,19 @@ passwd dan
 ## Exit and reboot
 
 exit  
+umount /mnt/boot/efi
+umount /mnt/home
+umount /mnt
 reboot
+
+## Keyring initialization
+
+systemctl enable dhcpcd
+systemctl start dhcpcd
+
+pacman-key --init
+pacman-key --populate archlinux
+pacman -Syyu
 
 ## If all its working install additional software
 
