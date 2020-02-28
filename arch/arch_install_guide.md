@@ -12,6 +12,7 @@ ls /sys/firmware/efi/efivars
 ## Update system clock
 
 timedatectl set-ntp true
+timedatectl status
 
 ## Create partition table
 
