@@ -13,11 +13,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim'
 Plug 'junegunn/fzf'
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
+Plug 'plasticboy/vim-markdown'
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'lervag/vimtex'
 call plug#end()
 
 set hidden
@@ -28,6 +29,10 @@ let g:airline_theme='base16_gruvbox_dark_hard'
 let vim_markdown_preview_toggle=1
 let vim_markdown_preview_use_xdg_open=1
 let vim_markdown_preview_temp_file=0
+
+let g:tex_flavor = 'latex'
+let g:vimtex_compiler_latexmk = { 'build_dir' : '.latex_build' }
+let g:vimtex_view_general_viewer = 'zathura'
 
 "-------------------------------------------------------------------------
 " COC.NVIM

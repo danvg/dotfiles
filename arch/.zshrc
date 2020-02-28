@@ -26,6 +26,8 @@ alias ccat=highlight
 alias vi=nvim
 alias vim=nvim
 
+alias youtube-dl-music='youtube-dl --extract-audio --audio-format vorbis --audio-quality 3 --output "~/Music/%(title)s.%(ext)s"'
+
 alias pacman_update='pacman -Syu'
 alias pacman_remove_orphans='pacman -Rns $(pacman -Qqtd)'
 alias pacman_clear_cache='paccache --remove -k 0'
