@@ -4,7 +4,7 @@
 set nocompatible
 filetype off
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.local/share/nvim/site/plugged')
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -32,7 +32,7 @@ let vim_markdown_preview_temp_file=0
 
 let g:tex_flavor = 'latex'
 let g:vimtex_compiler_latexmk = { 'build_dir' : '.latex_build' }
-let g:vimtex_view_general_viewer = 'zathura'
+let g:vimtex_view_general_viewer = 'evince'
 
 "-------------------------------------------------------------------------
 " COC.NVIM
