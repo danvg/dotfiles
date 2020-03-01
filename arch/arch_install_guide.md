@@ -132,3 +132,9 @@ pacman -S --needed ttf-dejavu ttf-liberation noto-fonts noto-emoji\
    chromium thunderbird speedcrunch pgadmin4 dia konsole\  
    libreoffice-fresh htop mpv mpd ncmpcpp filelight
 
+## Extras
+
+### Making mpd+ncmpcpp work
+
+systemctl --user enable mpd  
+use the ALSA output, pulseaudio sucks

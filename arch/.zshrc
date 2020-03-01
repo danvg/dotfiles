@@ -27,6 +27,7 @@ alias vi=nvim
 alias vim=nvim
 
 alias youtube-dl-music='youtube-dl --extract-audio --audio-format vorbis --audio-quality 3 --output "~/Music/%(title)s.%(ext)s"'
+alias set_terminal_color='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
 
 alias pacman_update='pacman -Syu'
 alias pacman_remove_orphans='pacman -Rns $(pacman -Qqtd)'
