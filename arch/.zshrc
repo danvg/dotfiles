@@ -48,6 +48,7 @@ export CXX=clang++
 export CXXFLAGS="-std=c++11 -Wall -Wextra -pedantic"
 
 export RANGER_LOAD_DEFAULT_RC=FALSE
+export PATH="$HOME/.local/bin":$PATH
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_COLOR_SCHEME='dark'

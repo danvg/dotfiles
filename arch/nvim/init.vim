@@ -32,7 +32,7 @@ let vim_markdown_preview_temp_file=0
 
 let g:tex_flavor = 'latex'
 let g:vimtex_compiler_latexmk = { 'build_dir' : '.latex_build' }
-let g:vimtex_view_general_viewer = 'evince'
+let g:vimtex_view_general_viewer = 'zathura'
 
 "-------------------------------------------------------------------------
 " COC.NVIM
