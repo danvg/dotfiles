@@ -1,5 +1,12 @@
 # ~/.zshrc
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 HISTFILE=~/.zhistory
 HISTSIZE=10000
 SAVEHIST=5000
@@ -23,11 +30,15 @@ alias lla='ls -la'
 alias cls=clear
 alias ccat=highlight
 
-alias vi=nvim
-alias vim=nvim
+# alias vi=nvim
+# alias vim=nvim
+
+# fix delete with backspace when switching modes
+bindkey "^?" backward-delete-char
 
 alias youtube-dl-music='youtube-dl --extract-audio --audio-format vorbis --audio-quality 3 --output "~/Music/%(title)s.%(ext)s"'
 alias set_terminal_color='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
+alias mount_gdrive="rclone mount mygoogledrive: ~/drive"
 
 alias pacman_update='pacman -Syu'
 alias pacman_remove_orphans='pacman -Rns $(pacman -Qqtd)'
@@ -43,21 +54,19 @@ alias config-picom='nvim ~/.config/picom/config'
 alias config-mpd='nvim ~/.config/mpd/mpd.conf'
 alias config-ncmpcpp='nvim ~/.config/ncmpcpp/config'
 
-export CC=clang
-export CXX=clang++
-export CXXFLAGS="-std=c++11 -Wall -Wextra -pedantic"
-
-export RANGER_LOAD_DEFAULT_RC=FALSE
-export PATH="$HOME/.local/bin":$PATH
-
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_COLOR_SCHEME='dark'
 POWERLEVEL9K_DATE_FORMAT=%D{%y-%m-%d}
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time os_icon)
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_SHORTEN_STRATEGY='truncate_from_right'
 
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
