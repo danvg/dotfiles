@@ -19,6 +19,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'plasticboy/vim-markdown'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'lervag/vimtex'
+Plug 'alvan/vim-closetag'
 call plug#end()
 
 set hidden

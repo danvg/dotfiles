@@ -83,6 +83,12 @@
       }
    },
 
+   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
+
+   "html.filetypes": ["html"],
+   "html.format.enable": true,
+   "html.validate.html": true,
+
    "codeLens.enable": false,
    "diagnostic.errorSign": "✘",
    "diagnostic.warningSign": "",

@@ -39,6 +39,8 @@ bindkey "^?" backward-delete-char
 alias youtube-dl-music='youtube-dl --extract-audio --audio-format vorbis --audio-quality 3 --output "~/Music/%(title)s.%(ext)s"'
 alias set_terminal_color='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
 alias mount_gdrive="rclone mount mygoogledrive: ~/drive"
+alias browser-sync-firefox="browser-sync start --server --browser "firefox" --files ".""
+alias browser-sync-chrome="browser-sync start --server --browser "chromium" --files ".""
 
 alias pacman_update='pacman -Syu'
 alias pacman_remove_orphans='pacman -Rns $(pacman -Qqtd)'
