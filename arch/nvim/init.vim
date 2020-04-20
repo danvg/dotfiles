@@ -180,6 +180,7 @@ set path+=**
 set wildmenu
 
 " Searching
+set nohlsearch
 set ignorecase
 set smartcase
 set showmatch
