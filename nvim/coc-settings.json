@@ -4,17 +4,17 @@
          "command": "ada_language_server",
          "filetypes": ["ada"]
       },
-      "cpp": {
+      "ccls": {
          "command": "ccls",
-         "filetypes": ["c", "cpp", "objc", "objcpp"],
+         "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
          "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
          "initializationOptions": {
             "cache": {
-               "directory": "/home/dan/.cache/ccls"
+               "directory": "/tmp/ccls"
             }
          }
-      },
-      "python": {
+    },
+    "python": {
          "command": "python",
          "args": [
             "-mpyls",
