@@ -30,9 +30,6 @@ alias lla='ls -la'
 alias cls=clear
 alias ccat=highlight
 
-# alias vi=nvim
-# alias vim=nvim
-
 # fix delete with backspace when switching modes
 bindkey "^?" backward-delete-char
 
@@ -46,15 +43,14 @@ alias pacman_update='pacman -Syu'
 alias pacman_remove_orphans='pacman -Rns $(pacman -Qqtd)'
 alias pacman_clear_cache='paccache --remove -k 0'
 
-alias config-nvim='nvim ~/.config/nvim/init.vim'
-alias config-zsh='nvim ~/.zshrc'
-alias config-ranger='nvim ~/.config/ranger/rc.conf'
-alias config-i3='nvim ~/.config/i3/config'
-alias config-polybar='nvim ~/.config/polybar/config'
-alias config-dunst='nvim ~/.config/dunst/config'
-alias config-picom='nvim ~/.config/picom/config'
-alias config-mpd='nvim ~/.config/mpd/mpd.conf'
-alias config-ncmpcpp='nvim ~/.config/ncmpcpp/config'
+alias config-vim='vim ~/dotfiles/vimrc'
+alias config-zsh='vim ~/dotfiles/zshrc'
+alias config-i3='vim ~/dotfiles/i3.config'
+alias config-polybar='vim ~/dotfiles/polybar.config'
+alias config-dunst='vim ~/dotfiles/dunst.config'
+alias config-picom='vim ~/dotfiles/picom.config'
+alias config-mpd='vim ~/dotfiles/mpd.conf'
+alias config-ncmpcpp='vim ~/dotfiles/ncmpcpp.config'
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_COLOR_SCHEME='dark'

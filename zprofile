@@ -2,9 +2,9 @@
 
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
-export EDITOR=nvim
-export VISUAL=nvim
-export BROWSER=chromium
+export EDITOR=vim
+export VISUAL=vim
+export BROWSER=firefox
 export PAGER=less
 
 if [ -d "$HOME/.local/bin" ] ; then
