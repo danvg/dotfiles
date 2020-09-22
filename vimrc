@@ -17,6 +17,7 @@ Plug 'reedes/vim-pencil'
 Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-litecorrect'
 Plug 'reedes/vim-colors-pencil'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 " ------------------------------------------------------------------------
