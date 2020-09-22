@@ -9,16 +9,13 @@
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact",
                        "javascriptreact"],
 
-  "html.filetypes": ["html"],
-  "html.format.enable": true,
-  "html.validate.html": true,
-
   "codeLens.enable": true,
   "diagnostic.errorSign": "✘",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
 
   "clangd.enabled": true,
+  "clangd.semanticHighlighting": true,
   "clangd.arguments": ["--compile-commands-dir=cmake-build-debug",
                        "--all-scopes-completion",
                        "--background-index",

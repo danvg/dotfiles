@@ -18,6 +18,8 @@ Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-litecorrect'
 Plug 'reedes/vim-colors-pencil'
 Plug 'honza/vim-snippets'
+Plug 'vim-syntastic/syntastic'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
 
 " ------------------------------------------------------------------------
@@ -28,6 +30,18 @@ source ~/.vimrc-coc
 
 let g:airline_powerline_fonts=1
 let g:airline_theme='base16_gruvbox_dark_hard'
+
+let g:syntastic_cpp_checkers = ['cpplint']
+let g:syntastic_c_checkers = ['cpplint']
+let g:syntastic_cpp_cpplint_exec = 'cpplint'
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
+
+" c++ syntax highlighting
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
 
 " ------------------------------------------------------------------------
 "  Base configs
@@ -152,12 +166,4 @@ augroup pencil
       \ 'thesaurus': ['~/vimfiles/spell/thesaurus/mthesaur.txt']
       \ })
    autocmd FileType text call SetupTextEditorOptions()
-augroup end
-
-augroup clikebrackets
-   inoremap {<cr> {<cr>}<c-o><s-o>
-   inoremap [ []<left>
-   inoremap ( ()<left>
-   inoremap " ""<left>
-   inoremap < <><left>
 augroup end
