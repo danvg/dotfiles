@@ -23,5 +23,6 @@
                        "--header-insertion=never",
                        "--suggest-missing-includes",
                        "--pch-storage=memory",
-                       "--offset-encoding=utf-8"]
+                       "--offset-encoding=utf-8",
+                       "--fallback-style=Google"]
 }
