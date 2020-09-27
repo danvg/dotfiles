@@ -39,7 +39,7 @@ let g:syntastic_cpp_cpplint_exec = 'cpplint'
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
 let g:syntastic_enable_signs=1
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_style_error_symbol = '✘'
@@ -56,7 +56,7 @@ let g:cpp_class_decl_highlight = 1
 " ------------------------------------------------------------------------
 
 " Leader key
-let mapleader = " "
+" let mapleader = " "
 
 " Spellcheck
 set spelllang=en
@@ -71,7 +71,8 @@ colorscheme gruvbox
 let g:ada_standard_types=1
 
 " Completion
-set completeopt+=menuone,noselect,preview
+" set completeopt+=menuone,noselect,preview
+set completeopt+=menuone,noselect,noinsert
 set shortmess+=c
 set shortmess+=I " no intro msg
 set belloff+=ctrlg
@@ -143,35 +144,34 @@ function TrimTrailingWhiteSpace()
   ''
 endfunction
 
-augroup Markdown
-  autocmd!
-  autocmd FileType markdown
-           \ set textwidth=0 wrapmargin=0 wrap formatoptions+=t linebreak
-augroup END
-
-function! SetupTextEditorOptions()
-   colorscheme pencil
-   set background=light
-   let g:airline_theme = 'pencil'
-   let g:pencil_gutter_color = 1
-   let g:pencil_neutral_code_bg = 1
-   let g:pencil_neutral_headings = 1
-   let g:pencil_higher_contrast_ui = 0
-   let g:pencil_spell_undercurl = 1
-   let g:pencil_terminal_italics = 1
-   let g:lexical#spell = 1
-   let g:lexical#thesaurus_key = '<leader>t'
+function! InitMarkdownMode()
+  setl textwidth=0
+  setl wrapmargin=0
+  setl wrap
+  setl formatoptions+=t
+  setl linebreak
 endfunction
 
-augroup pencil
-   autocmd!
-   autocmd FileType text call pencil#init()
-   autocmd FileType text call litecorrect#init()
-   autocmd FileType text call lexical#init({
-      \ 'spell': 1,
-      \ 'spellang': ['en'],
-      \ 'dictionary': ['~/vimfiles/spell/dict/words'],
-      \ 'thesaurus': ['~/vimfiles/spell/thesaurus/mthesaur.txt']
-      \ })
-   autocmd FileType text call SetupTextEditorOptions()
-augroup end
+function! InitTextMode()
+  call pencil#init()
+  call litecorrect#init()
+  call lexical#init({
+        \ 'spell': 1,
+        \ 'spellang': ['en'],
+        \ 'dictionary': ['~/.vim/spell/dict/words'],
+        \ 'thesaurus': ['~/.vim/spell/thesaurus/mthesaur.txt']
+        \ })
+
+  colorscheme pencil
+  setl background=light
+  let g:airline_theme = 'pencil'
+  let g:pencil_gutter_color = 1
+  let g:pencil_neutral_code_bg = 1
+  let g:pencil_neutral_headings = 1
+  let g:pencil_higher_contrast_ui = 0
+  let g:pencil_spell_undercurl = 1
+  let g:pencil_terminal_italics = 1
+  let g:pencil#wrapModeDefault = 'soft'
+  let g:lexical#spell = 1
+  let g:lexical#thesaurus_key = '<leader>t'
+endfunction
