@@ -1,9 +1,5 @@
 " ~/.config/nvim/configs/defaults.vim
 
-" Leader key
-" let mapleader = " "
-" nnoremap <Space> <Nop>
-
 " Spellcheck
 set spelllang=en
 set spell
