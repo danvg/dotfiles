@@ -1,5 +1,8 @@
 " ~/.config/nvim/init.vim
 
+set nocompatible
+filetype off
+
 call plug#begin('~/.local/share/nvim/site/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
