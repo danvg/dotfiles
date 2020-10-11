@@ -4,6 +4,7 @@ set nocompatible
 filetype off
 
 call plug#begin('~/.local/share/nvim/site/plugged')
+Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
@@ -25,7 +26,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 Plug 'voldikss/vim-floaterm'
 Plug 'liuchengxu/vim-which-key'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 call plug#end()
 
 source ~/.config/nvim/configs/defaults.vim
@@ -38,4 +39,4 @@ source ~/.config/nvim/configs/pencil.vim
 source ~/.config/nvim/configs/fzf.vim
 source ~/.config/nvim/configs/floaterm.vim
 source ~/.config/nvim/configs/which-key.vim
-source ~/.config/nvim/configs/startify.vim
+" source ~/.config/nvim/configs/startify.vim

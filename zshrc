@@ -39,19 +39,21 @@ alias mount_gdrive="rclone mount mygoogledrive: ~/drive"
 alias browser-sync-firefox="browser-sync start --server --browser "firefox" --files ".""
 alias browser-sync-chrome="browser-sync start --server --browser "chromium" --files ".""
 
-alias pacman_update='pacman -Syu'
-alias pacman_remove_orphans='pacman -Rns $(pacman -Qqtd)'
+alias pacman_update='sudo pacman -Syu'
+alias pacman_remove_orphans='sudo pacman -Rns $(pacman -Qqtd)'
 alias pacman_clear_cache='paccache --remove -k 0'
 
-alias config-vim=$EDITOR '~/dotfiles/vimrc'
-alias config-nvim=$EDITOR '~/dotfiles/nvim/init.vim'
-alias config-zsh=$EDITOR '~/dotfiles/zshrc'
-alias config-i3=$EDITOR '~/dotfiles/i3.config'
-alias config-polybar=$EDITOR '~/dotfiles/polybar.config'
-alias config-dunst=$EDITOR '~/dotfiles/dunst.config'
-alias config-picom=$EDITOR '~/dotfiles/picom.config'
-alias config-mpd=$EDITOR '~/dotfiles/mpd.conf'
-alias config-ncmpcpp=$EDITOR '~/dotfiles/ncmpcpp.config'
+alias config-vim="$EDITOR ~/dotfiles/vimrc"
+alias config-nvim="$EDITOR ~/dotfiles/nvim/init.vim"
+alias config-zsh="$EDITOR ~/dotfiles/zshrc"
+alias config-zprofile="$EDITOR ~/dotfiles/zprofile"
+alias config-i3="$EDITOR ~/dotfiles/i3.config"
+alias config-polybar="$EDITOR ~/dotfiles/polybar.config"
+alias config-dunst="$EDITOR ~/dotfiles/dunst.config"
+alias config-picom="$EDITOR ~/dotfiles/picom.config"
+alias config-mpd="$EDITOR ~/dotfiles/mpd.conf"
+alias config-ncmpcpp="$EDITOR ~/dotfiles/ncmpcpp.config"
+alias config-alacritty="$EDITOR ~/dotfiles/alacritty.yml"
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_COLOR_SCHEME='dark'

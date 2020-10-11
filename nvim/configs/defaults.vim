@@ -9,7 +9,9 @@ filetype plugin indent on
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme solarized
+let g:solarized_termcolors=256
 let g:ada_standard_types=1
 
 " Completion
@@ -66,27 +68,47 @@ set scrolljump=5
 set scrolloff=3
 set ruler
 set linespace=0
-set pumheight=12
+set pumheight=10
 set number
 set showcmd
-set cursorline
+" set cursorline
 set colorcolumn=80
 set splitright
 set splitbelow
-set showtabline=2
-set signcolumn=yes
+" set showtabline=2
+" set signcolumn=yes
 
 " Removes trailing spaces
-function TrimTrailingWhiteSpace()
+function! s:TrimTrailingWhiteSpace()
   %s/\s*$//
   ''
 endfunction
 
 " Markdown mode
-function! InitMarkdownMode()
+function! s:InitMarkdownMode()
   setl textwidth=0
   setl wrapmargin=0
   setl wrap
   setl formatoptions+=t
   setl linebreak
 endfunction
+
+" Cpp Google indentation
+function! s:InitCppMode()
+  setl tabstop=2
+  setl shiftwidth=2
+  setl softtabstop=2
+  setl expandtab
+endfunction
+
+" Sets the terminal background to transparent
+function! s:SetTransparentTermBG()
+  highlight Normal ctermbg=None guibg=None
+endfunction
+
+command! -nargs=0 TrimTrailingWhiteSpace call s:TrimTrailingWhiteSpace()
+command! -nargs=0 InitMarkdownMode call s:InitMarkdownMode()
+command! -nargs=0 InitCppMode call s:InitCppMode()
+command! -nargs=0 SetTransparentTermBG call s:SetTransparentTermBG()
+
+call s:SetTransparentTermBG()
