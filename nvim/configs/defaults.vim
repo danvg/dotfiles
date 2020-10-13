@@ -9,9 +9,9 @@ filetype plugin indent on
 syntax enable
 set t_Co=256
 set background=dark
-" colorscheme gruvbox
-colorscheme solarized
-let g:solarized_termcolors=256
+colorscheme gruvbox
+" colorscheme solarized
+" let g:solarized_termcolors=256
 let g:ada_standard_types=1
 
 " Completion

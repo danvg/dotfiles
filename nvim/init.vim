@@ -27,6 +27,7 @@ Plug 'airblade/vim-rooter'
 Plug 'voldikss/vim-floaterm'
 Plug 'liuchengxu/vim-which-key'
 " Plug 'mhinz/vim-startify'
+Plug 'cdelledonne/vim-cmake'
 call plug#end()
 
 source ~/.config/nvim/configs/defaults.vim
