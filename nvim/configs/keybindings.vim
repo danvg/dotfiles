@@ -1,4 +1,3 @@
-" ~/.config/nvim/configs/keybindings.vim
 " source: https://github.com/ChristianChiarulli/nvim/blob/master/keys/mappings.vim
 
 " Leader key

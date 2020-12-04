@@ -1,8 +1,8 @@
 " ~/.config/nvim/configs/syntastic.vim
 
 let g:syntastic_cpp_checkers = ['cpplint']
-let g:syntastic_c_checkers = ['cpplint']
 let g:syntastic_cpp_cpplint_exec = 'cpplint'
+let g:syntastic_c_checkers = ['cpplint']
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_always_populate_loc_list = 1

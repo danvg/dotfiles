@@ -1,28 +1,58 @@
 {
-  "languageserver": {
-    "ada": {
-      "command": "ada_language_server",
-      "filetypes": ["ada"]
-    }
-  },
+   "languageserver": {
+      "ada": {
+         "command": "ada_language_server",
+         "filetypes": [
+            "ada"
+         ]
+      }
+   },
 
-  "eslint.filetypes": ["javascript", "typescript", "typescriptreact",
-                       "javascriptreact"],
+   "eslint.filetypes": [
+      "javascript",
+      "typescript",
+      "typescriptreact",
+      "javascriptreact"
+   ],
 
-  "codeLens.enable": true,
-  "diagnostic.errorSign": "✘",
-  "diagnostic.warningSign": "",
-  "diagnostic.infoSign": "",
+   "coc.preferences.hoverTarget": "float",
 
-  "clangd.enabled": true,
-  "clangd.semanticHighlighting": true,
-  "clangd.arguments": ["--compile-commands-dir=cmake-build-debug",
-                       "--all-scopes-completion",
-                       "--background-index",
-                       "--completion-style=detailed",
-                       "--header-insertion=never",
-                       "--suggest-missing-includes",
-                       "--pch-storage=memory",
-                       "--offset-encoding=utf-8",
-                       "--fallback-style=Google"]
+   "suggest.completionItemKindLabels": {
+      "text": "t",
+      "method": "m",
+      "function":""
+   },
+
+   "snippets.priority": 1,
+   "suggest.languageSourcePriority": 99,
+   "coc.source.file.priority": 2,
+   "coc.source.around.priority": 3,
+   "coc.source.buffer.priority": 4,
+
+   "list.indicator": ">",
+   "list.selectedSignText": " ",
+
+   "codeLens.enable": true,
+
+   "diagnostic.errorSign": "",
+   "diagnostic.warningSign": "",
+   "diagnostic.infoSign": "",
+   "diagnostic.hintSign": "",
+   "diagnostic.messageTarget": "float",
+
+   "clangd.enabled": true,
+   "clangd.semanticHighlighting": true,
+   "clangd.arguments": [
+      "--compile-commands-dir=build_linux",
+      "--all-scopes-completion",
+      "--background-index",
+      "--completion-style=detailed",
+      "--header-insertion=iwyu",
+      "--header-insertion-decorators",
+      "--suggest-missing-includes",
+      "--pch-storage=memory",
+      "--offset-encoding=utf-8",
+      "--fallback-style=Google",
+      "--limit-results=25"
+   ]
 }

@@ -1,3 +1,5 @@
+" ~/AppData/Local/nvim/init.vim
+
 set nocompatible
 filetype off
 
@@ -28,14 +30,14 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'mhinz/vim-startify'
 call plug#end()
 
-source ~/.config/nvim/configs/defaults.vim
-source ~/.config/nvim/configs/keybindings.vim
-source ~/.config/nvim/configs/airline.vim
-source ~/.config/nvim/configs/syntastic.vim
-source ~/.config/nvim/configs/vim-lsp-cxx-highlight.vim
-source ~/.config/nvim/configs/pencil.vim
-source ~/.config/nvim/configs/fzf.vim
-source ~/.config/nvim/configs/floaterm.vim
-source ~/.config/nvim/configs/which-key.vim
-source ~/.config/nvim/configs/startify.vim
-source ~/.config/nvim/configs/completion-nvim.vim
+source ~/windows_config/nvim/configs/defaults.vim
+source ~/windows_config/nvim/configs/keybindings.vim
+source ~/windows_config/nvim/configs/airline.vim
+source ~/windows_config/nvim/configs/syntastic.vim
+source ~/windows_config/nvim/configs/vim-lsp-cxx-highlight.vim
+source ~/windows_config/nvim/configs/pencil.vim
+source ~/windows_config/nvim/configs/fzf.vim
+source ~/windows_config/nvim/configs/floaterm.vim
+source ~/windows_config/nvim/configs/which-key.vim
+source ~/windows_config/nvim/configs/startify.vim
+source ~/windows_config/nvim/configs/completion-nvim.vim

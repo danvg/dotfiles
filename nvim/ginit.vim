@@ -1,6 +1,6 @@
 " ~/.config/nvim/ginit.vim
 
-set lines=48 columns=88 linespace=0
+set lines=48 columns=120 linespace=0
 
-:GuiFont Hack Nerd Font Mono:h12
+:GuiFont! Hack NF:h12
 :GuiPopupmenu 0

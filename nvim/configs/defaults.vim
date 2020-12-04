@@ -1,5 +1,3 @@
-" ~/.config/nvim/configs/defaults.vim
-
 " Spellcheck
 set spelllang=en
 set spell
@@ -7,11 +5,9 @@ set spell
 " Language syntax colorization
 filetype plugin indent on
 syntax enable
-set t_Co=256
+set termguicolors
 set background=dark
-colorscheme gruvbox
-" colorscheme solarized
-" let g:solarized_termcolors=256
+colorscheme onedark
 let g:ada_standard_types=1
 
 " Completion
@@ -68,24 +64,27 @@ set scrolljump=5
 set scrolloff=3
 set ruler
 set linespace=0
-set pumheight=10
+set pumheight=20
 set number
 set showcmd
-" set cursorline
-set colorcolumn=80
+set cursorline
+set colorcolumn=79
 set splitright
 set splitbelow
-" set showtabline=2
-" set signcolumn=yes
+set showtabline=2
+set signcolumn=yes
+
+set undofile
+set undodir=~/.vim_undo
 
 " Removes trailing spaces
-function! s:TrimTrailingWhiteSpace()
+function! s:TrimTrailingSpace()
   %s/\s*$//
   ''
 endfunction
 
-" Markdown mode
-function! s:InitMarkdownMode()
+" Text mode
+function! s:InitTextMode()
   setl textwidth=0
   setl wrapmargin=0
   setl wrap
@@ -106,9 +105,10 @@ function! s:SetTransparentTermBG()
   highlight Normal ctermbg=None guibg=None
 endfunction
 
-command! -nargs=0 TrimTrailingWhiteSpace call s:TrimTrailingWhiteSpace()
-command! -nargs=0 InitMarkdownMode call s:InitMarkdownMode()
+command! -nargs=0 TrimTrailingSpace call s:TrimTrailingSpace()
+command! -nargs=0 InitTextMode call s:InitTextMode()
 command! -nargs=0 InitCppMode call s:InitCppMode()
 command! -nargs=0 SetTransparentTermBG call s:SetTransparentTermBG()
 
-call s:SetTransparentTermBG()
+autocmd BufNewFile,BufRead *.h,*.cpp call s:InitCppMode()
+autocmd BufNewFile,BufRead *.txt,*.md call s:InitTextMode()
