@@ -1,58 +1,58 @@
 {
-   "languageserver": {
-      "ada": {
-         "command": "ada_language_server",
-         "filetypes": [
-            "ada"
-         ]
-      }
-   },
-
-   "eslint.filetypes": [
-      "javascript",
-      "typescript",
-      "typescriptreact",
-      "javascriptreact"
-   ],
-
-   "coc.preferences.hoverTarget": "float",
-
-   "suggest.completionItemKindLabels": {
-      "text": "t",
-      "method": "m",
-      "function":""
-   },
-
-   "snippets.priority": 1,
-   "suggest.languageSourcePriority": 99,
-   "coc.source.file.priority": 2,
-   "coc.source.around.priority": 3,
-   "coc.source.buffer.priority": 4,
-
-   "list.indicator": ">",
-   "list.selectedSignText": " ",
-
-   "codeLens.enable": true,
-
-   "diagnostic.errorSign": "",
-   "diagnostic.warningSign": "",
-   "diagnostic.infoSign": "",
-   "diagnostic.hintSign": "",
-   "diagnostic.messageTarget": "float",
-
-   "clangd.enabled": true,
-   "clangd.semanticHighlighting": true,
-   "clangd.arguments": [
-      "--compile-commands-dir=build_linux",
-      "--all-scopes-completion",
-      "--background-index",
-      "--completion-style=detailed",
-      "--header-insertion=iwyu",
-      "--header-insertion-decorators",
-      "--suggest-missing-includes",
-      "--pch-storage=memory",
-      "--offset-encoding=utf-8",
-      "--fallback-style=Google",
-      "--limit-results=25"
-   ]
+    "languageserver": {
+        "ada": {
+            "command": "ada_language_server",
+            "filetypes": [
+                "ada"
+            ]
+        }
+    },
+    "coc.preferences.hoverTarget": "float",
+    "suggest.completionItemKindLabels": {
+        "text": "t",
+        "method": "m",
+        "function": ""
+    },
+    "snippets.priority": 1,
+    "suggest.languageSourcePriority": 99,
+    "coc.source.file.priority": 2,
+    "coc.source.around.priority": 3,
+    "coc.source.buffer.priority": 4,
+    "list.indicator": ">",
+    "list.selectedSignText": " ",
+    "codeLens.enable": true,
+    "diagnostic.errorSign": "",
+    "diagnostic.warningSign": "",
+    "diagnostic.infoSign": "",
+    "diagnostic.hintSign": "",
+    "diagnostic.messageTarget": "float",
+    "diagnostic.showUnused": true,
+    "diagnostic.virtualText": false,
+    "diagnostic.checkCurrentLine": true,
+    "clangd.enabled": true,
+    "clangd.semanticHighlighting": true,
+    "clangd.arguments": [
+        "--compile-commands-dir=build",
+        "--all-scopes-completion",
+        "--background-index",
+        "--completion-style=detailed",
+        "--header-insertion=iwyu",
+        "--header-insertion-decorators",
+        "--suggest-missing-includes",
+        "--pch-storage=memory",
+        "--offset-encoding=utf-8",
+        "--fallback-style=Google",
+        "--limit-results=25"
+    ],
+    "java.format.enabled": true,
+    "java.completion.maxResults": 40,
+    "java.completion.guessMethodArguments": true,
+    "java.signatureHelp.enabled": true,
+    "java.referencesCodeLens.enabled": true,
+    "java.saveActions.organizeImports": true,
+    "java.format.comments.enabled": true,
+    "Lua.workspace.library": {
+        "~/neovim/share/nvim/runtime/lua": true,
+        "~/neovim/share/nvim/runtime/lua/vim/lsp": true
+    }
 }

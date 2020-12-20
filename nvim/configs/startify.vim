@@ -1,6 +1,4 @@
-" ~/dotfiles/nvim/configs/startify.vim
-
-let g:startify_session_dir = '~/dotfiles/nvim/session'
+let g:startify_session_dir = '~/windows_config/nvim/session'
 let g:startify_session_autoload = 0
 let g:startify_session_delete_buffers = 0
 let g:startify_change_to_vcs_root = 0
@@ -16,7 +14,8 @@ let g:startify_lists = [
           \ ]
 
 let g:startify_bookmarks = [
-            \ { 'i': '~/dotfiles/nvim/init.vim' },
+            \ { 'i': '~/windows_config/nvim/init.vim' },
             \ { 'h': '~/' },
             \ { 'd': '~/Desktop' },
+            \ { 'w': 'D:/Workspace' },
             \ ]

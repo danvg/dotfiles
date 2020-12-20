@@ -1,4 +1,3 @@
-" ~/.config/nvim/configs/which-key.vim
 " https://www.chrisatmachine.com/Neovim/15-which-key/
 
 " Map leader+w to which_key
@@ -10,10 +9,10 @@ let g:which_key_map =  {}
 
 " Define a separator
 let g:which_key_sep = '→'
-set timeoutlen=100
+" set timeoutlen=100
 
 " Not a fan of floating windows for this
-let g:which_key_use_floating_win = 0
+let g:which_key_use_floating_win = 1
 
 " Change the colors if you want
 highlight default link WhichKey          Operator

@@ -64,5 +64,5 @@ command! -buffer -nargs=0 LspShowLineDiagnostics lua require'jumpLoc'.openLineDi
 nnoremap <buffer><silent> <C-h> <Cmd>LspShowLineDiagnostics<CR>
 
 let g:diagnostics_enable_virtual_text = 1
-" let g:diagnostic_trimmed_virtual_text = '20'
+let g:diagnostic_trimmed_virtual_text = '79'
 let g:diagnostic_auto_popup_while_jump = 1

@@ -1,23 +1,26 @@
+filetype plugin indent on
+syntax on
+
+" Syntax and colorization
+set termguicolors
+set t_Co=256
+set background=dark
+colorscheme gruvbox-material
+highlight Comment cterm=italic gui=italic
+
+" Indentation
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set smarttab
+set backspace=eol,start,indent
+set autoindent
+set smartindent
+
 " Spellcheck
 set spelllang=en
 set spell
-
-" Language syntax colorization
-filetype plugin indent on
-syntax enable
-set termguicolors
-set background=dark
-colorscheme onedark
-let g:ada_standard_types=1
-
-" Completion
-set completeopt+=menuone,noselect,noinsert
-set shortmess+=c
-set shortmess+=I " no intro msg
-set belloff+=ctrlg
-set noerrorbells visualbell t_vb=
-set path+=**
-set wildmenu
 
 " Searching
 set nohlsearch
@@ -27,11 +30,50 @@ set showmatch
 set matchtime=5
 set incsearch
 
+" Completion
+set completeopt+=menuone,noselect,noinsert
+set shortmess+=c
+set shortmess+=I
+set belloff+=ctrlg
+set noerrorbells visualbell t_vb=
+set wildmenu
+set updatetime=300
+
 " Wrapping
 set nowrap
 set linebreak
 set textwidth=500
 set whichwrap+=<,>,[,],h,l
+
+" Folding
+set foldmethod=indent
+set foldnestmax=3
+set foldcolumn=1
+set nofoldenable
+
+" Mouse
+set mouse=a
+set mousehide
+
+" Scrolling
+set scrolljump=5
+set scrolloff=3
+
+" Splitting
+set splitright
+set splitbelow
+
+" Show
+set laststatus=2
+set ruler
+set linespace=0
+set pumheight=20
+set showcmd
+set number
+set cursorline
+set colorcolumn=79
+set showtabline=2
+set signcolumn=yes
 
 " File handling
 set encoding=utf-8
@@ -44,38 +86,12 @@ set noswapfile
 set nobackup
 set nowritebackup
 
-" Other stuff
-set laststatus=2
-set mouse=a
-set mousehide
-set tabstop=3
-set shiftwidth=3
-set softtabstop=3
-set expandtab
-set smarttab
-set backspace=eol,start,indent
-set foldmethod=indent
-set foldnestmax=3
-set foldcolumn=1
-set nofoldenable
-set autoindent
-set smartindent
-set scrolljump=5
-set scrolloff=3
-set ruler
-set linespace=0
-set pumheight=20
-set number
-set showcmd
-set cursorline
-set colorcolumn=79
-set splitright
-set splitbelow
-set showtabline=2
-set signcolumn=yes
+" Clipboard
+" set clipboard=unnamedplus
 
+" Undo history
 set undofile
-set undodir=~/.vim_undo
+set undodir=~/dotfiles/nvim/undodir
 
 " Removes trailing spaces
 function! s:TrimTrailingSpace()

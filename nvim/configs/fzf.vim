@@ -1,3 +1,4 @@
+" ~/.config/nvim/configs/fzf.vim
 " https://www.chrisatmachine.com/Neovim/08-fzf/
 
 " This is the default extra key bindings

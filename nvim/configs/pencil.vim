@@ -1,3 +1,5 @@
+" ~/.config/nvim/configs/pencil.vim
+
 function! InitTextMode()
   call pencil#init()
   call litecorrect#init()
