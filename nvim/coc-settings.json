@@ -32,7 +32,7 @@
     "clangd.enabled": true,
     "clangd.semanticHighlighting": true,
     "clangd.arguments": [
-        "--compile-commands-dir=build",
+        "--compile-commands-dir=cmake-build-debug",
         "--all-scopes-completion",
         "--background-index",
         "--completion-style=detailed",
@@ -42,7 +42,7 @@
         "--pch-storage=memory",
         "--offset-encoding=utf-8",
         "--fallback-style=Google",
-        "--limit-results=25"
+        "--limit-results=50"
     ],
     "java.format.enabled": true,
     "java.completion.maxResults": 40,
@@ -50,9 +50,5 @@
     "java.signatureHelp.enabled": true,
     "java.referencesCodeLens.enabled": true,
     "java.saveActions.organizeImports": true,
-    "java.format.comments.enabled": true,
-    "Lua.workspace.library": {
-        "~/neovim/share/nvim/runtime/lua": true,
-        "~/neovim/share/nvim/runtime/lua/vim/lsp": true
-    }
+    "java.format.comments.enabled": true
 }

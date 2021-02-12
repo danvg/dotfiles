@@ -1,8 +1,8 @@
 " source: https://github.com/ChristianChiarulli/nvim/blob/master/keys/mappings.vim
 
 " Leader key
-" let g:mapleader = "\<Space>"
-" let g:maplocalleader = ","
+let g:mapleader = " "
+let g:maplocalleader = ","
 
 " Better nav for omnicomplete
 inoremap <expr> <c-j> ("\<C-n>")

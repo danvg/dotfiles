@@ -1,9 +1,11 @@
 filetype plugin indent on
 syntax on
 
+" Path setting for the find command
+set path=$PWD/**
+
 " Syntax and colorization
 set termguicolors
-set t_Co=256
 set background=dark
 colorscheme gruvbox-material
 highlight Comment cterm=italic gui=italic
@@ -74,6 +76,8 @@ set cursorline
 set colorcolumn=79
 set showtabline=2
 set signcolumn=yes
+set list
+set listchars=tab:┆·,trail:·,precedes:,extends:
 
 " File handling
 set encoding=utf-8
@@ -106,6 +110,7 @@ function! s:InitTextMode()
   setl wrap
   setl formatoptions+=t
   setl linebreak
+  echomsg 'Setting indentation for Text mode'
 endfunction
 
 " Cpp Google indentation
@@ -114,6 +119,7 @@ function! s:InitCppMode()
   setl shiftwidth=2
   setl softtabstop=2
   setl expandtab
+  echomsg 'Setting indentation for CPP mode'
 endfunction
 
 " Sets the terminal background to transparent
