@@ -1,4 +1,4 @@
-" ~/AppData/Local/nvim/ginit.vim
+" ~/.config/nvim/ginit.vim
 
 set lines=48 columns=120 linespace=0
 

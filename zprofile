@@ -4,7 +4,7 @@ export LANG=en_US.UTF-8
 export TERM=xterm-256color
 export EDITOR=nvim
 export VISUAL=nvim
-export BROWSER=firefox
+export BROWSER=chrome
 export PAGER=less
 
 if [ -d "$HOME/.local/bin" ] ; then
@@ -23,3 +23,5 @@ export CXXFLAGS="-std=c++11 -Wall -Wextra -pedantic"
 
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export QT_QPA_PLATFORMTHEME=qt5ct
+
+export TOOLS_INCLUDE='/home/dava1000/repos/TOOLS_INCLUDE'

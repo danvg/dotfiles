@@ -8,7 +8,9 @@ set path=$PWD/**
 set termguicolors
 set background=dark
 colorscheme gruvbox-material
-highlight Comment cterm=italic gui=italic
+
+" Enable / disable italic font for comments
+highlight Comment cterm=None gui=None
 
 " Indentation
 set tabstop=4
@@ -21,7 +23,7 @@ set autoindent
 set smartindent
 
 " Spellcheck
-set spelllang=en
+set spelllang=en,sv
 set spell
 
 " Searching
@@ -91,11 +93,11 @@ set nobackup
 set nowritebackup
 
 " Clipboard
-" set clipboard=unnamedplus
+set clipboard=unnamedplus
 
 " Undo history
 set undofile
-set undodir=~/dotfiles/nvim/undodir
+set undodir=$UNDODIR_PATH
 
 " Removes trailing spaces
 function! s:TrimTrailingSpace()
@@ -132,5 +134,5 @@ command! -nargs=0 InitTextMode call s:InitTextMode()
 command! -nargs=0 InitCppMode call s:InitCppMode()
 command! -nargs=0 SetTransparentTermBG call s:SetTransparentTermBG()
 
-autocmd BufNewFile,BufRead *.h,*.cpp call s:InitCppMode()
-autocmd BufNewFile,BufRead *.txt,*.md call s:InitTextMode()
+autocmd FileType cpp call s:InitCppMode()
+autocmd FileType text,markdown call s:InitTextMode()

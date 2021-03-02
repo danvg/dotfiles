@@ -5,14 +5,15 @@ let g:completion_trigger_on_delete = 0
 let g:completion_enable_auto_paren = 1
 
 let g:completion_chain_complete_list = {
-    \'default' : [
-    \    {'complete_items': ['lsp']},
-    \    {'complete_items': ['snippet']},
-    \    {'complete_items': ['path']},
-    \    {'mode': '<c-f>'},
-    \    {'mode': '<c-b>'}
-    \]
-    \}
+            \ 'default' : {
+            \   'default': [
+            \       {'complete_items': ['lsp', 'buffers', 'snippet']},
+            \       {'mode': '<c-p>'},
+            \       {'mode': '<c-n>'}],
+            \   'comment': [],
+            \   'string' : [
+            \       {'complete_items': ['path']}]
+            \ }}
 
 augroup CompletionTriggerCharacter
     autocmd!
@@ -70,16 +71,16 @@ local on_attach = function(client, bufnr)
 
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
-        lspconfig.util.nvim_multiline_command [[
-            :hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow
-            :hi LspReferenceText cterm=bold ctermbg=red guibg=LightYellow
-            :hi LspReferenceWrite cterm=bold ctermbg=red guibg=LightYellow
+        vim.api.nvim_exec([[
+            hi LspReferenceRead cterm=bold ctermbg=DarkRed guibg=DarkRed
+            hi LspReferenceText cterm=bold ctermbg=DarkRed guibg=DarkRed
+            hi LspReferenceWrite cterm=bold ctermbg=DarkRed guibg=DarkRed
             augroup lsp_document_highlight
             autocmd!
                 autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
                 autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
             augroup END
-        ]]
+        ]], false)
     end
 end
 

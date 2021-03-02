@@ -1,4 +1,4 @@
-let g:startify_session_dir = '~/windows_config/nvim/session'
+let g:startify_session_dir = $SESSION_PATH
 let g:startify_session_autoload = 0
 let g:startify_session_delete_buffers = 0
 let g:startify_change_to_vcs_root = 0
