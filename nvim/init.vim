@@ -1,1 +1,1 @@
-/home/dava1000/dotfiles/nvim/coc_init.vim
+/home/dan/dotfiles/nvim/coc_init.vim

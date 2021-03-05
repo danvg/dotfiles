@@ -2,9 +2,18 @@
 
 HISTFILE=~/.zhistory
 HISTSIZE=10000
-SAVEHIST=5000
+SAVEHIST=$HISTSIZE
 
+setopt correct
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history
 unsetopt BEEP
+
 bindkey -v
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
@@ -25,11 +34,6 @@ if type "lsd" > /dev/null; then
 else
     alias ls='ls -hF --color=tty'
 fi
-alias dir='ls --color=auto --format=vertical'
-alias vdir='ls --color=auto --format=long'
-alias ll='ls -l'
-alias la='ls -A'
-alias lla='ls -la'
 
 alias cls=clear
 
@@ -43,7 +47,7 @@ alias browser-sync-chrome='browser-sync start --server --browser "chromium" --fi
 
 alias pacman_update='sudo pacman -Syu'
 alias pacman_remove_orphans='sudo pacman -Rns $(pacman -Qqtd)'
-alias pacman_clear_cache='paccache --remove -k 0'
+alias pacman_clear_cache='sudo pacman -Sc'
 
 alias config-vim="$EDITOR ~/dotfiles/vimrc"
 alias config-nvim="$EDITOR ~/dotfiles/nvim/init.vim"
@@ -56,8 +60,6 @@ alias config-picom="$EDITOR ~/dotfiles/picom.config"
 alias config-mpd="$EDITOR ~/dotfiles/mpd.conf"
 alias config-ncmpcpp="$EDITOR ~/dotfiles/ncmpcpp.config"
 alias config-alacritty="$EDITOR ~/dotfiles/alacritty.yml"
-
-alias launch_ssh_server='sudo /usr/bin/sshd -D'
 
 # Colored man pages: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh
 if [[ "$OSTYPE" = solaris* ]]
