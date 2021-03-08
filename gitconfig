@@ -33,20 +33,20 @@
     browser = firefox
 
 [color "branch"]
-current = magenta bold
-local = yellow bold
-remote = cyan bold
+    current = magenta bold
+    local = yellow bold
+    remote = cyan bold
 
 [color "diff"]
-meta = yellow bold
-frag = magenta bold
-old = red bold
-new = green bold
-whitespace = red reverse
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
 
 [color "status"]
-branch = magenta bold
-added = green bold
-changed = yellow bold
-untracked = red bold
-unmerged = "#fe8019"
+    branch = magenta bold
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
+    unmerged = "#fe8019"
