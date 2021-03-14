@@ -1,0 +1,8 @@
+clion 1:2020.3.2-1
+google-chrome 89.0.4389.90-1
+hunspell-sv 1:2.42-1
+neovim-nightly-bin 0.5.0+dev+1133+g0869cbd55-1
+nerd-fonts-victor-mono 2.1.0-2
+starship-bin 0.50.0-1
+visual-studio-code-bin 1.54.2-1
+zoom-system-qt 5.4.53391.1108-3
