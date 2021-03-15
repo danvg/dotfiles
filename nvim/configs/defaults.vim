@@ -10,7 +10,7 @@ set background=dark
 colorscheme gruvbox-material
 
 " Enable / disable italic font for comments
-highlight Comment cterm=None gui=None
+highlight Comment cterm=italic gui=italic
 
 " Indentation
 set tabstop=4

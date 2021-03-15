@@ -16,8 +16,7 @@ Plug 'shinchu/lightline-gruvbox.vim'        " modeline theme
 Plug 'neovim/nvim-lspconfig'                " lsp configurations
 Plug 'nvim-lua/completion-nvim'             " completion engine
 Plug 'steelsojka/completion-buffers'        " buffer completion source
-Plug 'hrsh7th/vim-vsnip'                    " vscode style snippets
-Plug 'hrsh7th/vim-vsnip-integ'              " above integration with lsp client
+Plug 'SirVer/ultisnips'                     " snippets
 Plug 'honza/vim-snippets'                   " snippet database
 Plug 'itchyny/lightline.vim'                " modeline
 Plug 'voldikss/vim-floaterm'                " floating window terminal
